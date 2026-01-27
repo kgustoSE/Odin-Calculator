@@ -1,0 +1,79 @@
+.rajdhani-semibold {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: "Rajdhani", 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom right,#4f556e,20%,#363946);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+div {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px, auto) repeat(5,100px);
+    justify-content: center;
+    align-content: center;
+    height: auto;
+    width: auto;
+    background-color: #363946;
+    box-shadow: 10px 18px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.calculator-grid > button {
+    cursor: pointer;
+    font-size: 25px;
+    border: 1px solid #363946;
+    outline: none;
+    background-color: rgba(129, 149, 149, 0.75);
+}
+
+.calculator-grid > button:hover {
+    background-color: rgba(145, 155, 155, 0.95);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+.display {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.display .history-display {
+    color: rgba(255,255,255,0.75);
+    font-size: 1.5rem;
+}
+
+.display .current-display {
+    color: white;
+    font-size: 2.5rem;
+}
