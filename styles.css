@@ -56,6 +56,7 @@ div {
 
 .calculator-grid > button:active {
     background-color: rgba(167, 180, 180, 0.95) !important;
+    transform: scale(0.97);
 }
 
 .span-two {
