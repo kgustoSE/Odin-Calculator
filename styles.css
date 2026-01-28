@@ -1,5 +1,5 @@
 .rajdhani-semibold {
-  font-family: "Rajdhani", sans-serif;
+  font-family: "Rajdhani", "Russo One", sans-serif;
   font-weight: 600;
   font-style: normal;
 }
@@ -15,15 +15,18 @@ body {
     margin: 0;
     padding: 0;
     background-image: linear-gradient(to bottom right,#4f556e,20%,#363946);
+    flex-direction: column;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    
 }
 
 div {
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
+    
 }
 
 .calculator-grid {
@@ -41,7 +44,7 @@ div {
 
 .calculator-grid > button {
     cursor: pointer;
-    font-size: 25px;
+    font-size: 40px;
     border: 1px solid #363946;
     outline: none;
     background-color: rgba(129, 149, 149, 0.75);
@@ -49,6 +52,10 @@ div {
 
 .calculator-grid > button:hover {
     background-color: rgba(145, 155, 155, 0.95);
+}
+
+.calculator-grid > button:active {
+    background-color: rgba(167, 180, 180, 0.95) !important;
 }
 
 .span-two {
