@@ -169,3 +169,54 @@ const calculator = new Calculator(historyDisplayText, currentDisplayText);
                 calculator.delete();
                 calculator.updateDisplay();
     });
+
+    // keyboard functionality
+
+    document.addEventListener ("keydown", (KeyboardEvent) => {
+    
+        //numbers 0-9
+        if (KeyboardEvent.key >= `0` && KeyboardEvent.key <= `9`) {
+            calculator.appendNumbers(KeyboardEvent.key);
+            calculator.updateDisplay();
+        }
+        //operators
+        if (KeyboardEvent.key === `+`) {
+            calculator.addOperator(`+`);
+            calculator.updateDisplay();
+        }
+        if (KeyboardEvent.key === `-`) {
+            calculator.addOperator(`-`);
+            calculator.updateDisplay();
+        }
+        if (KeyboardEvent.key === `*`) {
+            calculator.addOperator(`*`);
+            calculator.updateDisplay();
+        }
+        if (KeyboardEvent.key === `/` || KeyboardEvent.key === `÷`) {
+            KeyboardEvent.preventDefault(); 
+            calculator.addOperator(`÷`);
+            calculator.updateDisplay();
+        }
+        //decimals
+        if (KeyboardEvent.key === `.` || KeyboardEvent.key === `,`) {
+            calculator.appendNumbers(`.`);
+            calculator.updateDisplay();
+        }
+        //equals
+        if (KeyboardEvent.key === `=` || KeyboardEvent.key === `Enter`) {
+            calculator.calculate();
+            calculator.updateDisplay();
+        }
+        //clear
+        if (KeyboardEvent.key === `C` || KeyboardEvent.key === `c` || KeyboardEvent.key === `Escape`) {
+            calculator.clear();
+            calculator.updateDisplay();
+        }
+        //delete
+        if (KeyboardEvent.key === `Delete` || KeyboardEvent.key === `Backspace`) {
+            calculator.delete ();
+            calculator.updateDisplay();
+        }
+        
+    
+    });
