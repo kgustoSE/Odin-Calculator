@@ -5,10 +5,12 @@
 }
 
 *, *::before, *::after {
+    touch-action: manipulation;
     box-sizing: border-box;
     font-family: "Rajdhani", 'Courier New', Courier, monospace;
     font-weight: 600;
     font-style: normal;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -48,6 +50,7 @@ div {
     border: 1px solid #363946;
     outline: none;
     background-color: rgba(129, 149, 149, 0.75);
+    color: black;
 }
 
 .calculator-grid > button:hover {
@@ -84,4 +87,27 @@ div {
 .display .current-display {
     color: white;
     font-size: 2.5rem;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 500px) {
+    .calculator-grid {
+        grid-template-columns: repeat(4, minmax(60px, 1fr));
+        grid-template-rows: minmax(100px, auto) repeat(5, minmax(60px, 80px));
+        width: 95vw;
+        max-width: 400px;
+    }
+    
+    .calculator-grid > button {
+        font-size: 32px;
+        color:black;
+    }
+    
+    .display .current-display {
+        font-size: 2rem;
+    }
+    
+    .display .history-display {
+        font-size: 1.2rem;
+    }
 }
